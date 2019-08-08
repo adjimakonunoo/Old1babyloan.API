@@ -29,7 +29,7 @@ namespace babyloan.API.Useradministration.Api
         [HttpGet]
         public async Task<ActionResult> Get()
         {
-           var response= await ApiService.ProcessRequest(_fineractClient, Request, "permissions");
+           var response= await ApiService.ProcessRequest(_fineractClient, Request);
             string result = await response.Content.ReadAsStringAsync();
             if (response.StatusCode == HttpStatusCode.OK)
             {
